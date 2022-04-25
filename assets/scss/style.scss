@@ -15,7 +15,7 @@ body {
 .wrapper {
   min-height: 100vh;
   background-color: $secondary;
-  border: 5px solid red;
+  border: 1px solid red;
 }
 
 .container {
@@ -95,9 +95,73 @@ body {
   margin-top: $margin * 5;
 }
 
+.text {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+}
+
 .search {
+  border: 1px solid red;
+  &__tabs {
+    display: inline-flex;
+    border: 1px solid red;
+    padding: 10px 10px 24px 10px;
+    background: $white;
+    border-radius: 25px 25px 0 0;
+  }
+
+  
+
+  // &__tab::before{
+  //   position: absolute;
+  //   content: '';
+  //   top: 0;
+  //   left: 0;
+  //   min-width: 25px;
+  //   height: 25px;
+  //   background: url('../images/airOn.svg') cover;
+  //   z-index: 2;
+  // }
+
+  // &__tab:first-child{
+  //   margin-right: $margin * 2;
+  // }
+
   &__filters {
-    background: #fff;
+    background: $white;
     padding: 60px 48px;
+    border-radius: 0 50px 50px 50px;
+  }
+}
+
+.search__tab {
+  display: flex;
+  align-items: center;
+  color: $black;
+  padding: 18px 20px;
+  border-radius:25px;
+  position: relative;
+  overflow: hidden;
+
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $primary;
+    opacity: .2;
+  }
+  &:first-child{
+    margin-right: 17px;
+  }
+  &-img{
+    width: 25px;
+    height: 25px;
+    background: url('../images/airOn.svg') center / cover;
+    margin-right: 4px;
   }
 }
