@@ -13,7 +13,6 @@ body {
 .wrapper {
   min-height: 100vh;
   background-color: #7C7C7C;
-  border: 1px solid red;
 }
 
 .container {
@@ -119,34 +118,38 @@ body {
   margin-top: 40px;
 }
 
-.text {
-  font-family: Poppins;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 27px;
-}
-
 .search {
-  border: 1px solid red;
+  margin-top: -136px;
 }
 
 .search__tabs {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  border: 1px solid red;
   padding: 10px 10px 24px 10px;
   background: white;
   border-radius: 25px 25px 0 0;
 }
 
 .search__filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background: white;
   padding: 60px 48px;
   border-radius: 0 50px 50px 50px;
 }
 
+.search__filters > *:not(:last-child) {
+  margin-right: 32px;
+}
+
+.search__filters > :nth-child(2) {
+  margin-right: 40px;
+}
+
 .search__tab {
+  cursor: default;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -158,27 +161,197 @@ body {
   border-radius: 25px;
   position: relative;
   overflow: hidden;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
 }
 
-.search__tab::before {
-  content: '';
+.search__tab_active::before {
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background: #3E86F5;
-  opacity: .2;
+  opacity: 0.2;
 }
 
 .search__tab:first-child {
   margin-right: 17px;
 }
 
+.search__tab:not(.search__tab_active) {
+  cursor: pointer;
+}
+
 .search__tab-img {
   width: 25px;
   height: 25px;
-  background: url("../images/airOn.svg") center/cover;
+  background: url("../images/sprite.png") left top/cover;
   margin-right: 4px;
+}
+
+.search__tab-img_1 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.search__tab-img_2 {
+  background-position-x: -25px;
+}
+
+.search__button {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  min-width: 154px;
+  min-height: 154px;
+  border-radius: 65px;
+  overflow: hidden;
+  z-index: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search__button::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #3E86F5;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.search__button > div {
+  width: 62px;
+  height: 62px;
+  background: url("../images/sprite.png") top left/cover;
+  background-position-x: -248px;
+}
+
+.filter {
+  position: relative;
+  padding: 44px 22px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.filter::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.4;
+  border-radius: 25px;
+  border: 2px solid #7C7C7C;
+}
+
+.filter > *:not(:last-child) {
+  margin-right: 32px;
+}
+
+.filter__value {
+  font-size: 24px;
+}
+
+.filter__item {
+  color: black;
+  font-weight: 500;
+}
+
+.filter_date .filter__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 1;
+  margin-bottom: 10px;
+}
+
+.filter_date .filter__name > span {
+  opacity: 0.5;
+}
+
+.filter_date > :not(:last-child) {
+  margin-right: 48px;
+}
+
+.filter_date .filter__icon::before {
+  top: 7px;
+  left: 7px;
+  background-position-x: -92px;
+}
+
+.filter__name {
+  font-size: 18px;
+  color: black;
+  opacity: 0.5;
+  margin-bottom: 12px;
+}
+
+.filter__name-icon {
+  margin-left: 16px;
+  width: 25px;
+  height: 25px;
+  background: url("../images/sprite.png") left top/cover;
+}
+
+.filter__name-icon-return {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.filter__icon {
+  position: relative;
+  min-width: 40px;
+  height: 40px;
+}
+
+.filter__icon::after, .filter__icon::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 40px;
+}
+
+.filter__icon::after {
+  border: 1px dashed black;
+  opacity: 0.3;
+}
+
+.filter__icon::before {
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background: url("../images/sprite.png") left top/cover;
+  background-position-x: -60px;
 }
 /*# sourceMappingURL=style.css.map */
