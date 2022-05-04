@@ -7,6 +7,17 @@
   line-height: 1;
 }
 
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  /* отображаем курсор в виде руки при наведении; некоторые
+  считают, что необходимо оставлять стрелочный вид для кнопок */
+  cursor: pointer;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   color: $white;
@@ -23,6 +34,7 @@ body {
   max-width: 1180px;
   margin: auto;
   padding: 0 $padding * 2;
+
   &_column {
     display: flex;
     flex-direction: column;
@@ -101,7 +113,7 @@ body {
 
 .search {
   margin-top: $margin * -17;
-  margin-bottom: $margin * 20;
+
   &__tabs {
     display: inline-flex;
     padding: 10px 10px 24px 10px;
@@ -111,16 +123,17 @@ body {
 
   &__filters {
     display: flex;
+    flex-wrap: wrap;
     background: $white;
     padding: 60px 48px;
     border-radius: 0 50px 50px 50px;
   }
 
-  &__filters > *:not(:last-child) {
+  &__filters>*:not(:last-child) {
     margin-right: $margin * 4;
   }
 
-  &__filters > :nth-child(2) {
+  &__filters> :nth-child(2) {
     margin-right: $margin * 5;
   }
 }
@@ -150,12 +163,29 @@ body {
     opacity: 0.2;
   }
 
+  // &:hover {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   z-index: 0;
+  //   background: $secondary;
+  //   opacity: 0.2;
+  // }
+
   &:first-child {
     margin-right: 17px;
   }
 
   &:not(.search__tab_active) {
     cursor: pointer;
+
+    &:hover {
+      background: #ccc;
+      transition: background .2s ease;
+    }
   }
 
   &-img {
@@ -200,7 +230,7 @@ body {
     z-index: -1;
   }
 
-  & > div {
+  &>div {
     $sprite_cell: 62px;
     width: $sprite_cell;
     height: $sprite_cell;
@@ -210,6 +240,119 @@ body {
 }
 
 // Special Block
+.special-block {
+  padding: 160px 0;
+
+  & .tabs {
+    margin-bottom: $margin * 5;
+  }
+}
+
+// About-block
+
+.about-block {
+  padding: 80px 0;
+
+  &>.container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.statistic {
+  position: relative;
+  height: 800px;
+  width: 480px;
+  margin-right: 120px;
+  // .statistic__img
+
+  &__img {
+    border-radius: 75px;
+
+  }
+
+  // .statistic__badge
+
+
+  &__badge {
+    position: absolute;
+    top: 50%;
+    left: -87px;
+    height: 120px;
+    width: 174px;
+    border-radius: 35px;
+    background: $white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+
+    &>strong {
+      color: $primary;
+      font-size: 36px;
+    }
+
+    &>span {
+      color: $black;
+      font-weight: 300;
+      font-size: 18px;
+    }
+
+    &_1 {
+      top: 8%;
+      right: -91px;
+      left: initial;
+    }
+
+    &_3 {
+      top: 67%;
+      right: -91px;
+      left: initial;
+    }
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  // .description__text
+  &_title {
+    margin-bottom: 20px !important;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 20px;
+    color: $secondary;
+    line-height: 200%;
+    margin-bottom: 40px;
+
+    &:first-of-type {
+      margin-bottom: 40px;
+    }
+  }
+
+  // .description__btn
+
+  &__btn {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 23px 34px;
+    background: $primary;
+    color: $white;
+    border-radius: 10px;
+    font-weight: 300;
+    font-size: 20px;
+    box-shadow: 4px 8px 25px rgba(62, 134, 245, 0.25);
+  }
+}
+
+
 
 //-->Elements<--//
 
@@ -233,7 +376,7 @@ body {
     border: 2px solid $secondary;
   }
 
-  & > *:not(:last-child) {
+  &>*:not(:last-child) {
     margin-right: $margin * 4;
   }
 
@@ -253,12 +396,13 @@ body {
     align-items: center;
     opacity: 1;
     margin-bottom: 10px;
-    & > span {
+
+    &>span {
       opacity: 0.5;
     }
   }
 
-  & > :not(:last-child) {
+  &> :not(:last-child) {
     margin-right: 48px;
   }
 
@@ -330,6 +474,7 @@ body {
   line-height: 72px;
   color: $black;
   margin-bottom: $margin * 8;
+
   &_center {
     text-align: center;
   }
@@ -337,14 +482,19 @@ body {
 
 // Tabs
 .tabs {
-  cursor: pointer;
   display: flex;
-  align-items: center;
-  margin: 0 auto;
-  padding: $padding;
-  background: $white;
-  border-radius: $padding;
-  margin-bottom: $margin * 5;
+  justify-content: center;
+
+  &__content {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $padding;
+    background: $white;
+    border-radius: $padding;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
+  }
 
   &__item {
     color: $secondary;
@@ -353,10 +503,160 @@ body {
     border-radius: $padding;
     padding: $padding * 1.5 $padding * 3;
 
+    &:hover {
+      transition: background 0.2s ease;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &_active:hover,
     &_active {
       cursor: default;
       background-color: $primary;
       color: $white;
     }
+
+    &:not(:last-child) {
+      margin-right: $padding;
+    }
+  }
+}
+
+// Card
+.special-block__card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin: 0 -12px;
+
+  & .card {
+    margin: 10px;
+  }
+}
+
+.card {
+  display: inline-block;
+  overflow: hidden;
+  background: $white;
+  border-radius: 50px;
+  padding: 22px 13px 25px 27px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
+
+  // .card__top
+
+  &__top {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  // .card__photo
+
+  &__photo {
+    border-radius: 50px;
+  }
+
+  // .card__date
+
+  &__date {
+    $fontSize: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+
+    margin-left: 20px;
+
+    width: 28px;
+    font-weight: 500;
+    font-size: 18px;
+    color: $secondary;
+    letter-spacing: 0.5em;
+
+    &>div {
+      transform: rotate(90deg);
+    }
+
+    // line-height: 27px;
+  }
+
+  // .card__bottom
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    margin: 0 14px 0 19px;
+
+    &>*:not(:last-child) {
+      margin-bottom: $margin;
+    }
+  }
+
+  // .card__params
+
+  &__params {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  // .card__badge
+
+  &__badge {
+    color: #f178b6;
+    background: #fcddec;
+    padding: 0 $padding * 2;
+    margin-right: $margin * 2;
+    border-radius: 100px;
+    line-height: 21px;
+  }
+
+  // .card__duration
+
+  &__duration {
+    color: $secondary;
+  }
+
+  // .card__title
+
+  &__title {
+    display: flex;
+    color: $black;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  // .card__total
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // .card__price
+
+  &__price {
+    color: $secondary;
+    font-weight: 500;
+    font-size: 18px;
+
+    &>strong {
+      color: $black;
+      font-size: 24px;
+    }
+  }
+
+  // .card__button
+
+  &__button {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    color: $primary;
+    padding: $padding * 2 $padding * 3;
+    border-radius: 10px;
+    background: #f2f6ff;
   }
 }
