@@ -15,7 +15,7 @@ body {
 // Layout
 .wrapper {
   min-height: 100vh;
-  background-color: $secondary;
+  background-color: $background;
 }
 
 .container {
@@ -101,6 +101,7 @@ body {
 
 .search {
   margin-top: $margin * -17;
+  margin-bottom: $margin * 20;
   &__tabs {
     display: inline-flex;
     padding: 10px 10px 24px 10px;
@@ -208,8 +209,11 @@ body {
   }
 }
 
-// Filter-block
+// Special Block
 
+//-->Elements<--//
+
+// Filter-block
 .filter {
   position: relative;
   padding: 44px 22px;
@@ -316,5 +320,43 @@ body {
     background: url("../images/sprite.png") left top / cover;
     background-position-x: $sprite-cell * (-2);
   }
-  
+}
+
+//Title
+.title {
+  font-family: Poppins;
+  font-size: 48px;
+  font-weight: $semiBold;
+  line-height: 72px;
+  color: $black;
+  margin-bottom: $margin * 8;
+  &_center {
+    text-align: center;
+  }
+}
+
+// Tabs
+.tabs {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: $padding;
+  background: $white;
+  border-radius: $padding;
+  margin-bottom: $margin * 5;
+
+  &__item {
+    color: $secondary;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: $padding;
+    padding: $padding * 1.5 $padding * 3;
+
+    &_active {
+      cursor: default;
+      background-color: $primary;
+      color: $white;
+    }
+  }
 }
