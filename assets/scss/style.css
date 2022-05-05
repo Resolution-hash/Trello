@@ -386,6 +386,44 @@ body {
           box-shadow: 4px 8px 25px rgba(62, 134, 245, 0.25);
 }
 
+.destination-block {
+  padding: 120px 0;
+}
+
+.destination-block .tabs {
+  margin-bottom: 80px;
+}
+
+.card_destination-block {
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.card_destination-block .card__photo {
+  border-radius: 25px;
+}
+
+.card_destination-block .card__bottom {
+  margin: 0 20px;
+}
+
+.card_destination-block .card__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card_destination-block .card__title {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.card_destination-block .card__country {
+  font-weight: 500;
+  font-size: 14px;
+  color: #7c7c7c !important;
+}
+
 .filter {
   position: relative;
   padding: 44px 22px;
@@ -519,6 +557,25 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.tabs_opacity .tabs__content {
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.tabs_opacity .tabs__item {
+  font-weight: 600;
+  font-size: 18px;
+  color: #7c7c7c;
+  padding: 13px 23px;
+}
+
+.tabs_opacity .tabs__item_active,
+.tabs_opacity .tabs__item_active:hover {
+  background-color: white;
+  color: #3e86f5;
 }
 
 .tabs__content {
@@ -657,6 +714,11 @@ body {
   margin-right: 16px;
   border-radius: 100px;
   line-height: 21px;
+}
+
+.card__badge_purple {
+  color: #7879F1;
+  background: #F1F1FD;
 }
 
 .card__duration {
