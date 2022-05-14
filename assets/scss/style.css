@@ -1109,6 +1109,9 @@ body > * {
 }
 
 @media screen and (max-width: 1200px) {
+  :root {
+    --block-padding: 6vw;
+  }
   /*  first-screen  */
   .first-screen__content {
     -webkit-box-pack: start;
@@ -1125,7 +1128,7 @@ body > * {
     line-height: 1.8em;
     margin-top: 24px;
   }
-  /*  search-filters  */
+  /*  search-block  */
   .search__filters {
     padding: 2vw;
     -webkit-box-align: center;
@@ -1202,9 +1205,19 @@ body > * {
     padding: 1vw;
     padding-bottom: 0;
   }
+  /* special-block */
+  .special-block {
+    padding: var(--block-padding) 0;
+  }
+  .title {
+    margin-bottom: 3vw;
+  }
 }
 
 @media screen and (max-width: 992px) {
+  :root {
+    --block-padding: 3vw;
+  }
   /* first-screen */
   .menu__item {
     font-size: 22px;
@@ -1224,6 +1237,15 @@ body > * {
     line-height: 1.8em;
     margin-top: 24px;
   }
+  .first-screen__title {
+    font-size: 5.8vw;
+  }
+  .first-screen__subtitle {
+    font-size: 3vw;
+  }
+  .first-screen__content {
+    padding-top: 14vw;
+  }
   /*  search-filters  */
   .search {
     margin-top: 0px;
@@ -1236,6 +1258,25 @@ body > * {
   }
   .search__tab:first-child {
     margin-right: 1vw;
+  }
+  /* special-block */
+  .special-block {
+    padding: var(--block-padding) 0;
+  }
+  .title {
+    margin-bottom: 3vw;
+    font-size: 4.2vw;
+  }
+  .tabs__item {
+    padding: 1vw 1vw;
+  }
+  .card {
+    padding: 2vw 2vw;
+  }
+  .card__photo {
+    --size: 32vw;
+    width: var(--size);
+    height: var(--size);
   }
 }
 
@@ -1255,16 +1296,102 @@ body > * {
   .menu__item {
     font-size: 3vw;
   }
+  .first-screen {
+    height: initial;
+  }
   .first-screen__content {
-    padding-top: 32px;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    padding-top: 5vw;
+    margin-bottom: 5vw;
+  }
+  .filter__name {
+    font-size: 2vw;
+    height: 13px;
+  }
+  .filter__value {
+    font-size: 2.5vw;
+  }
+  .first-screen__title {
+    font-size: 5.4vw;
+  }
+  .first-screen__subtitle {
+    font-size: 3vw;
+  }
+  /* search-block */
+  .search__tab-text {
+    font-size: 2vw;
+  }
+  .search__tab-img {
+    --size: 3vw;
+  }
+  .search__filters > *:not(:last-child) {
+    margin-right: 1vw;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* search-block */
+  .search__button {
+    width: 100%;
+  }
+  .search__filters {
+    --radius: 4vw;
+    border-radius: var(--radius);
+    border-top-left-radius: 0;
+  }
+  .search__tabs {
+    --radius: 3vw;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .search__filters > *:not(:last-child) {
+    margin-bottom: 1vw;
+  }
+  .search__tab-img {
+    --size: 3.3vw;
+  }
+  .search__tab-text {
+    font-size: 2.3vw;
+  }
+  .filter {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-right: 0 !important;
+  }
+  .filter__name {
+    font-size: 2.8vw;
+  }
+  .filter__value {
+    font-size: 3.2vw;
+  }
+  .filter__icon {
+    --size: 6vw;
+    min-width: var(--size);
+    height: var(--size);
+  }
+  .filter__icon::before {
+    --size: 5.1vw;
+    width: var(--size);
+    height: var(--size);
+  }
+  .filter_date .filter__icon::before {
+    --size: 5.1vw;
+    width: var(--size);
+  }
+  .filter__item {
+    width: 19vw;
   }
 }
 
 @media screen and (max-width: 480px) {
   /* first-screen */
+  .header {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding-top: 1vw;
+  }
+  .menu__item {
+    font-size: 3.4vw;
+  }
   .first-screen {
     padding-bottom: 1.7em;
   }
@@ -1272,11 +1399,38 @@ body > * {
     margin-top: 1.2em;
   }
   .first-screen__content {
-    padding-top: 1.3em;
+    padding-top: 0.8em;
   }
-  /* search-filters */
+  /* search-block */
+  .filter {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-right: 0 !important;
+  }
+  .filter::before {
+    border-width: 1px;
+  }
+  .search__filters > *:not(:last-child) {
+    margin-bottom: 2.2vw;
+  }
   .tabs__item {
     font-size: 14px;
+  }
+  .search__tab-text {
+    font-size: 3.5vw;
+  }
+  .search__tab-img {
+    --size: 4.5vw;
+  }
+  .filter__name {
+    font-size: 3.6vw;
+    margin-bottom: 2vw;
+  }
+  .filter__value {
+    font-size: 3.4vw;
+  }
+  .filter__item {
+    width: 20.7vw;
   }
   /* destination */
   .destination-block .title {
