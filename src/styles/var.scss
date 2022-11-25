@@ -1,10 +1,10 @@
 // color
 $white: white;
 $black: black;
-$primary: #3e86f5;
-$secondary: #7c7c7c;
-$background: #f7f7f7;
-$fushia: #f178b6;
+$primary: #3E86F5;
+$secondary: #7C7C7C;
+$background: #E5E5E5;
+
 
 // text
 $regular: 400;
@@ -16,10 +16,14 @@ $semiBold: 600;
 $padding: 8px;
 $margin: 8px;
 
-// Icons
+// Icons 
 $sprite_cell: 25px;
 $sprite_cols: 8;
 $sprite_rows: 1;
 
 $sprite_wd: $sprite_cell * $sprite_cols;
 $sprite_ht: $sprite_cell * $sprite_rows;
+
+
+
+

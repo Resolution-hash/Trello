@@ -1,0 +1,352 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(rel='stylesheet' type='text/css' href='css/main.min.css')
+  title Static Template
+main.wrapper
+  section.first-screen
+    .container.container_column
+      header.header
+        .logo Treloo
+        nav.menu
+          a.menu__item.menu__item_active(href='#review') Review
+          a.menu__item(href='#tips') Tips
+          a.menu__item(href='#alerts') Alerts
+          a.menu__item(href='#blog') Blog
+      .first-screen__content
+        .first-screen__title
+          | Discover Your Life, Travel Where You Want
+        .first-screen__subtitle
+          | Would you explore natur paradise in the world, let&rsquo;s find the best
+          | destination in world with us.
+  section.search-block
+    .container
+      .search
+        .search__tabs
+          .search__tab.search__tab_active
+            .search__tab-img.search__tab-img_1
+            span Flight
+          .search__tab
+            .search__tab-img.search__tab-img_2
+            span Hotel
+        .search__filters
+          .filter
+            .filter__item
+              .filter__name Living From
+              .filter__value Dubai
+            .filter__icon
+            .filter__item
+              .filter__name Going to
+              .filter__value New York
+          .filter.filter_date
+            .filter__item
+              .filter__name
+                span Leave
+                .filter__name-icon
+              .filter__value 23 Jan, Sat
+            .filter__icon
+            .filter__item
+              .filter__name
+                span Return
+                .filter__name-icon.filter__name-icon-return
+              .filter__value 14 Jan, Thu
+          .search__button
+            div
+  section.special-block#tips
+    .container
+      h2.title.title_center Special Upcoming Offers
+      .tabs
+        .tabs__content
+          a.tabs__item(data-tab = '#cardBlock-1').tabs__item_active Couple
+          a.tabs__item(data-tab = '#cardBlock-2') Family
+          a.tabs__item(data-tab = '#cardBlock-3') Team
+      .special-block__card
+        .card__block.card__block_active#cardBlock-1
+          .card
+            .card__top
+              img.card__photo(src='./images/card/1.jpg' alt='')
+              .card__date
+                div 14 FEB 2022
+            .card__bottom
+              .card__params
+                .card__badge Relax
+                .card__duration 3 Days, 3 Nights
+              .card__title Loga Sea
+              .card__total
+                .card__price
+                  strong 700$
+                  span /Person
+                button.card__button Book Now
+          .card
+            .card__top
+              img.card__photo(src='./images/card/2.jpg' alt='')
+              .card__date
+                div 18 JUN 2022
+            .card__bottom
+              .card__params
+                .card__badge.card__badge_purple Adventure
+                .card__duration 4 Days, 3 Nights
+              .card__title Ansgar Scheffold
+              .card__total
+                .card__price
+                  strong 400$
+                  span /Person
+                button.card__button Book Now
+          .card
+            .card__top
+              img.card__photo(src='images/card/3.jpg' alt='')
+              .card__date
+                div 22 DEC 2022
+            .card__bottom
+              .card__params
+                .card__badge Relax
+                .card__duration 3 Days, 3 Nights
+              .card__title Lona X
+              .card__total
+                .card__price
+                  strong 340$
+                  span /Person
+                button.card__button Book Now
+
+
+
+
+
+        .card__block#cardBlock-2
+          .card
+            .card__top
+              img.card__photo(src='./images/card/1.jpg' alt='')
+              .card__date
+                div 14 FEB 2022
+            .card__bottom
+              .card__params
+                .card__badge Relax
+                .card__duration 3 Days, 3 Nights
+              .card__title Kaliningrad
+              .card__total
+                .card__price
+                  strong 600$
+                  span /Person
+                button.card__button Book Now
+          .card
+            .card__top
+              img.card__photo(src='./images/card/2.jpg' alt='')
+              .card__date
+                div 18 JUN 2022
+            .card__bottom
+              .card__params
+                .card__badge.card__badge_purple Adventure
+                .card__duration 4 Days, 3 Nights
+              .card__title bahamas inslands
+              .card__total
+                .card__price
+                  strong 450$
+                  span /Person
+                button.card__button Book Now
+          .card
+            .card__top
+              img.card__photo(src='images/card/3.jpg' alt='')
+              .card__date
+                div 22 DEC 2022
+            .card__bottom
+              .card__params
+                .card__badge Relax
+                .card__duration 3 Days, 3 Nights
+              .card__title Madrid
+              .card__total
+                .card__price
+                  strong 300$
+                  span /Person
+                button.card__button Book Now
+
+
+
+
+        .card__block#cardBlock-3
+          .card
+            .card__top
+              img.card__photo(src='./images/card/1.jpg' alt='')
+              .card__date
+                div 14 FEB 2022
+            .card__bottom
+              .card__params
+                .card__badge Relax
+                .card__duration 3 Days, 3 Nights
+              .card__title New-York
+              .card__total
+                .card__price
+                  strong 900$
+                  span /Person
+                button.card__button Book Now
+          .card
+            .card__top
+              img.card__photo(src='./images/card/2.jpg' alt='')
+              .card__date
+                div 18 JUN 2022
+            .card__bottom
+              .card__params
+                .card__badge.card__badge_purple Adventure
+                .card__duration 4 Days, 3 Nights
+              .card__title New Deli
+              .card__total
+                .card__price
+                  strong 390$
+                  span /Person
+                button.card__button Book Now
+          .card
+            .card__top
+              img.card__photo(src='./images/card/3.jpg' alt='')
+              .card__date
+                div 22 DEC 2022
+            .card__bottom
+              .card__params
+                .card__badge Relax
+                .card__duration 3 Days, 3 Nights
+              .card__title Paris
+              .card__total
+                .card__price
+                  strong 750$
+                  span /Person
+                button.card__button Book Now
+
+
+        
+  section.about-block#blog
+    .container
+      .statistic
+        img.statistic__img(src='./images/about.jpg' alt='Статистика')
+        .statistic__badge.statistic__badge_1
+          strong 300+
+          span DESTINATIONS
+        .statistic__badge.statistic__badge_2
+          strong 5000+
+          span TOURISTS
+        .statistic__badge.statistic__badge_3
+          strong 150+
+          span HOTELS
+      .description
+        .description__block
+          h2.title.description_title Travel Any Corner of The World With Us
+          p.description__text
+            | Would you explore nature paradise in the world, let&rsquo;s find the best destination
+            | in world with us, Would you explore nature paradise in the world, let&rsquo;s find the best destination in world
+            | with us. Would you explore nature paradise in the world, let&rsquo;s find the best destination in world with us.
+          p.description__text
+            | Would you explore nature paradise in the world,
+            | let&rsquo;s find the best destination in
+            | world with us.
+          .description__button
+            button.button Contact Us  
+  section.destination-block
+    .container
+      h2.title.title_center Recommended Destination
+      .tabs.tabs_opacity
+        .tabs__content.tabs__content_destination
+          .tabs__item.tabs__item_active Populor
+          .tabs__item Adventure
+          .tabs__item Beath
+      .destination-block__cards
+        .card.card_destination
+          .card__top
+            img.card__photo(src='/images/card/4.jpg' alt='')
+            .rating.card__rating
+              .rating__icon
+              span.rating__text 3.4
+          .card__bottom
+            .card__title Kina Mountain
+            .card__address
+              .card__mark
+              .card__country Combodia
+        .card.card_destination
+          .card__top
+            img.card__photo(src='/images/card/5.jpg' alt='')
+            .rating.card__rating
+              .rating__icon
+              span.rating__text 4.5
+          .card__bottom
+            .card__title Kina Mountain
+            .card__address
+              .card__mark
+              .card__country Combodia
+        .card.card_destination
+          .card__top
+            img.card__photo(src='/images/card/6.jpg' alt='')
+            .rating.card__rating
+              .rating__icon
+              span.rating__text 4.2
+          .card__bottom
+            .card__title Kina Mountain
+            .card__address
+              .card__mark
+              .card__country Combodia
+        .card.card_destination
+          .card__top
+            img.card__photo(src='/images/card/7.jpg' alt='')
+            .rating.card__rating
+              .rating__icon
+              span.rating__text 3.5
+          .card__bottom
+            .card__title Kina Mountain
+            .card__address
+              .card__mark
+              .card__country Combodia
+  section.reviews-block#review
+    .container
+      .reviews-block__cards
+        .review
+          .review__quote
+          .review__text
+            | Our trip to Morocco was truly a onece in a lifetime
+            | experience and we are so grateful to everyone
+            br
+            |  that made
+            |                 it happen seamlessly. Our travel
+            br
+            |  planner, Jaouad, was
+            |                 increadible.
+          a.review__name(href='#') -Vand D
+          .review__nickname Happy Treloo
+          .review__avatar
+            img(src='./images/review/1.jpg' alt='avatar')
+            .rating.review__rating
+              .rating__icon
+              .rating__text 4.5
+        .review
+          .review__quote
+          .review__text
+            | Our trip to Morocco was truly a onece in a lifetime
+            | experience and we are so grateful to everyone
+            br
+            |  that made
+            |                   it happen seamlessly. Our travel
+            br
+            |  planner, Jaouad, was
+            |                   increadible.
+          a.review__name(href='#') -Tru Vio
+          .review__nickname Happy Treloo
+          .review__avatar
+            img.review__photo(src='./images/review/2.jpg' alt='avatar')
+            .rating.review__rating
+              .rating__icon
+              .rating__text 4.9
+      .reviews-block__actions
+        .reviews-block__prev
+        .reviews-block__next
+  .section.registred-block#alerts
+    .container
+      .registred-block__content
+        .title
+          | Don&rsquo;t Miss The 50% Discount if You register Today
+        button.button.button_light Register Today
+  footer.footer
+    .container
+      .footer__copyright
+        | &copy; 2022 Treloo LLC - All right reserved.
+      .footer__menu
+        a.footer__menu-item(href='#') Review
+        a.footer__menu-item(href='#') Tips
+        a.footer__menu-item(href='#') Alerts
+        a.footer__menu-item(href='#') Blog
+  script(src='./js/main.min.js')

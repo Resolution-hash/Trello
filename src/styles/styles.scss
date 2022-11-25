@@ -7,7 +7,6 @@
   line-height: 1;
 }
 
-
 button {
   padding: 0;
   border: none;
@@ -22,7 +21,7 @@ a {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
   color: $white;
 }
 
@@ -328,6 +327,8 @@ body {
   flex-direction: column;
   justify-content: center;
 
+ 
+
 
   // .description__text
   &_title {
@@ -344,6 +345,11 @@ body {
     &:first-of-type {
       margin-bottom: 40px;
     }
+  }
+
+  &__button{
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -640,7 +646,6 @@ body {
 
 //Title
 .title {
-  font-family: Poppins;
   font-size: 48px;
   font-weight: $semiBold;
   line-height: 72px;
@@ -720,7 +725,7 @@ body {
   display: flex;
   align-items: center;
   border-radius: 25px;
-  padding: 1px $margin * 1.2;
+  padding: 1px $margin * 1;
 
   &__icon {
     $sprite_cell: 15px;
@@ -744,12 +749,24 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 
-  margin: 0 - $margin*1.5;
+  margin: 0 - $margin * 1.5;
 
   & .card {
     margin: $margin*1.2;
   }
 }
+
+.card__block{
+  display: none;
+
+  &_active{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+}
+
 
 .card {
   display: inline-block;
@@ -929,6 +946,11 @@ body {
     padding: $padding * 2 $padding * 3;
     border-radius: 10px;
     background: rgb(227 234 249);
+
+    &:active{
+      transform: scale(1.1);
+    transition: all .2s ease-in-out;
+    }
   }
 }
 
@@ -996,6 +1018,7 @@ body {
     right: 30px;
     top: 35px;
     width: 45px;
+    height: 16px;
     padding: 0;
   }
 }
@@ -1012,6 +1035,11 @@ body {
   font-weight: 300;
   font-size: 20px;
   box-shadow: 4px 8px 25px rgba(62, 134, 245, 0.25);
+
+  &:active{
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+  }
 }
 
 .button_light {
@@ -1028,15 +1056,37 @@ body {
 
 //desktop
 
+
+@media screen and (max-width: 1400px) {
+  
+  /*About-block*/
+
+  .about-block > .container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .statistic{
+    height: unset;
+    margin-right: 0;
+    margin-bottom: 10%;
+  }
+  
+  .description{
+    flex-direction: row;
+
+    &__block{
+      width: 70%;
+      text-align: center;
+    }
+  }
+}
+
 @media screen and (max-width: 1200px) {
   :root {
-    --block-padding: 6vw;
+    --block-padding: 15vw;
   }
   /*  first-screen  */
-  .first-screen__content {
-    justify-content: flex-start;
-    padding-top: $margin * 8;
-  }
 
   .first-screen__title {
     font-size: 56px;
@@ -1145,6 +1195,12 @@ body {
   .title {
     margin-bottom: 3vw;
   }
+
+  /* about-block */
+
+  .about-block > .container{
+    flex-direction: column;
+  }
 }
 
 //notebook
@@ -1153,6 +1209,7 @@ body {
   :root {
     --block-padding: 3vw;
     --card-size: 32vw;
+    --about-img-size: 50vw;
   }
   /* first-screen */
   .menu__item {
@@ -1264,8 +1321,95 @@ body {
   .card__button {
     font-size: calc(var(--card-size) / 19);
     padding: calc(var(--card-size) / 25) calc(var(--card-size) / 20);
+
+  }
+
+  /*About-block*/
+
+
+  .statistic{
+    width: var(--about-img-size);
+    
+
+    &__img{
+      border-radius: calc(var(--about-img-size) / 6.3);
+      width: 100%;
+    }
+
+    &__badge{
+      width: calc(var(--about-img-size) / 2.9);
+      height: calc(var(--about-img-size) / 4.1);
+      border-radius: calc(var(--about-img-size) / 15);
+
+      &_1,
+      &_3{
+        right: -17%;
+      }
+
+      &_2{
+        left: -17%;
+      }
+
+      & strong{
+        font-size: calc(var(--about-img-size) / 16.5);
+      }
+  
+      & span{
+        font-size: calc(var(--about-img-size) / 32);
+      }
+    }
+  }
+
+  .description__text{
+    font-size: 2.4vw;
+    
+  }
+
+
+  .description__button > .button{
+    padding: 2.5vw 3.4vw !important;
+    font-size: 2.5vw !important;
+    border-radius: 1vw !important;
+  }
+
+  .reviews-block{
+    padding-top: 100px;
+  }
+
+  .reviews-block__cards {
+    justify-content: center;
+  }
+
+  .review:last-of-type{
+    display:none
+  }
+
+
+  /*registred-block*/
+
+  .registred-block__content {
+    padding: 100px 100px;
+  }
+
+  /*footer*/
+
+  .footer{
+
+    .container{
+      flex-direction: column;
+      row-gap: $margin * 5;
+    }
+
+    &__copyright{
+      font-size: 2.5vw;
+    }
+
+    &__menu{
+      font-size: 2.7vw;
+    }
   }
 }
+
 
 
 //tablet
@@ -1281,7 +1425,7 @@ body {
   }
 
   .header .logo {
-    font-size: 6vw;
+    font-size: 8vw;
     margin-bottom: 0.6vw;
   }
 
@@ -1343,7 +1487,46 @@ body {
   .card__date {
     margin-left: -0.5vw;
   }
+
+  /*About-block*/
+
+  .statistic{
+    &__img{
+
+    }
+  }
+
+   /*review-block*/
+   .reviews-block__cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: $margin * 15;
+  }
+
+  .review__text{
+    padding: 0 20px;
+  }
+
+  .review__text,
+  .review__name,
+  .review__nickname{
+    font-size: 18px;
+  }
+
+  /*registred-block*/
+
+  .registred-block__content {
+    border-radius: 11vw;
+    .button{
+      padding: 3.5vw 4.5vw;
+      font-size: 2.7vw;
+      border-radius: 3vw;
+    }
+  }
+
+  
 }
+
 
 @media screen and (max-width: 576px) {
   :root {
@@ -1425,6 +1608,22 @@ body {
   .card__date {
     margin-left: -1vw;
   }
+
+  /*registred-block*/
+
+  .registred-block__content {
+    padding: 50px 50px;
+  }
+
+  /*footer*/
+
+  .footer{
+
+    &__copyright{
+      font-size: 15px;
+    }
+  }
+ 
 }
 
 //small devices
@@ -1518,8 +1717,12 @@ body {
     margin-left: -1vw;
   }
 
+  /* sstatistic */
+  
+
   /* footer */
   .footer__menu {
     font-size: 1em;
   }
+
 }
